@@ -4,7 +4,7 @@ function getBestFriends(friends) {
     return friends
         .filter(friend => friend.best)
         .sort((a, b) => a.name.localeCompare(b.name))
-        .map(function (friend) {
+        .map(friend => {
             friend.priority = 0;
 
             return friend;
@@ -111,7 +111,6 @@ function Filter() {
  */
 function MaleFilter() {
     console.info('MaleFilter');
-    // this.prototype = Filter;
     this.filter = friend => friend.gender === 'male';
 }
 
@@ -124,7 +123,6 @@ Object.setPrototypeOf(MaleFilter.prototype, Filter.prototype);
  */
 function FemaleFilter() {
     console.info('FemaleFilter');
-    // this.prototype = Filter;
     this.filter = friend => friend.gender === 'female';
 }
 
